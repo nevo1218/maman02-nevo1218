@@ -9,7 +9,6 @@ import java.io.PrintStream;
 import java.io.InputStream;
 
 public class HotelArielMeyer1Tester {
-
     // Static fields copied from Hotel class
     public static final int ROOM_A_NUM = 307;
     public static final int ROOM_A_BEDS = 4;
@@ -449,7 +448,7 @@ public class HotelArielMeyer1Tester {
         Hotel.main(new String[]{});
 
         String output = outContent.toString();
-        assertTrue(output.contains("Error: Invalid menu choice"));
-    }
+       assertTrue(output.contains("Error: Invalid menu choice"));
 
+    }
 }
