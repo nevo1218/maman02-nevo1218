@@ -1,7 +1,9 @@
 // ==========================
 // File: HotelRoom.java
 // ==========================
+
 public class HotelRoom {
+
     // --- Attributes ---
     private int _roomNum;       // three digits: 100..999, default 999 if invalid
     private int _numBeds;       // 2..4, default 2 if invalid
@@ -34,10 +36,21 @@ public class HotelRoom {
     }
 
     // --- Getters ---
-    public int getRoomNum() { return _roomNum; }
-    public int getNumBeds() { return _numBeds; }
-    public boolean isOccupied() { return _occupied; }
-    public String getGuest() { return _guest; }
+    public int getRoomNum() {
+        return _roomNum;
+    }
+
+    public int getNumBeds() {
+        return _numBeds;
+    }
+
+    public boolean isOccupied() {
+        return _occupied;
+    }
+
+    public String getGuest() {
+        return _guest;
+    }
 
     // --- Setters ---
     public void setRoomNum(int roomNum) {
@@ -45,6 +58,7 @@ public class HotelRoom {
             _roomNum = roomNum;
         }
     }
+
     public void setNumBeds(int numBeds) {
         if (numBedsOk(numBeds)) {
             _numBeds = numBeds;
@@ -55,6 +69,7 @@ public class HotelRoom {
     private boolean roomNumOk(int roomNum) {
         return roomNum >= MIN_ROOM && roomNum <= MAX_ROOM;
     }
+
     private boolean numBedsOk(int numBeds) {
         return numBeds >= MIN_BEDS && numBeds <= MAX_BEDS;
     }
@@ -70,13 +85,15 @@ public class HotelRoom {
 
     // --- Equality: same room number AND same number of beds ---
     public boolean equals(HotelRoom other) {
-        return _roomNum == other._roomNum && _numBeds == other._numBeds;
+
+        return other != null && _roomNum == other._roomNum && _numBeds == other._numBeds;
     }
 
     // --- Ordering by room number ---
     public boolean before(HotelRoom other) {
         return _roomNum < other._roomNum;
     }
+
     public boolean after(HotelRoom other) {
         // must be implemented using before only (as taught)
         return other.before(this);
