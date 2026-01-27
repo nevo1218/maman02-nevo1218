@@ -1,10 +1,8 @@
-import java.util.Scanner;
-
 public class Hotel {
-    
+
     public static void main(String[] args) {
-    
-        Scanner in = new Scanner(System.in);
+
+        Scanner scan = new Scanner(System.in);
 
         HotelRoom a = new HotelRoom(307, 4);
         HotelRoom b = new HotelRoom(205, 3);
@@ -21,8 +19,8 @@ public class Hotel {
         System.out.println("4 - Find available room by requested beds");
         System.out.println("Enter your choice :");
 
-        int choice = in.nextInt();
-        in.nextLine();
+        int choice = scan.nextInt();
+        scan.nextLine();
 
         switch (choice) {
             case 1:
@@ -30,20 +28,20 @@ public class Hotel {
                 break;
             case 2:
                 System.out.print("Enter room number: ");
-                int roomNum = in.nextInt();
-                in.nextLine();
+                int roomNum = scan.nextInt();
+                scan.nextLine();
                 System.out.print("Enter guest name: ");
-                String guest = in.nextLine();
+                String guest = scan.nextLine();
                 checkIn(guest, roomNum, a, b, c);
                 break;
             case 3:
                 System.out.print("Enter room number: ");
-                roomNum = in.nextInt();
+                roomNum = scan.nextInt();
                 checkOut(roomNum, a, b, c);
                 break;
             case 4:
                 System.out.print("Enter number of beds: ");
-                int beds = in.nextInt();
+                int beds = scan.nextInt();
                 findAvailableByBeds(beds, a, b, c);
                 break;
             default:
@@ -60,28 +58,39 @@ public class Hotel {
     public static void displaySorted(HotelRoom a, HotelRoom b, HotelRoom c) {
         HotelRoom x = a, y = b, z = c, temp;
 
-        if (y.before(x)) { temp = x; x = y; y = temp; }
-        if (z.before(y)) { temp = y; y = z; z = temp; }
-        if (y.before(x)) { temp = x; x = y; y = temp; }
+        if (y.before(x)) { 
+            temp = x;
+            x = y;
+            y = temp; 
+        }
+        if (z.before(y)) { 
+            temp = y;
+            y = z;
+            z = temp;
+        }
+        if (y.before(x)) { 
+            temp = x;
+            x = y; 
+            y = temp;
+        }
 
         display(x, y, z);
     }
 
-    public static HotelRoom findRoomByNumber(int roomNum,
-                                             HotelRoom a,
-                                             HotelRoom b,
-                                             HotelRoom c) {
-        if (a.getRoomNum() == roomNum) return a;
-        if (b.getRoomNum() == roomNum) return b;
-        if (c.getRoomNum() == roomNum) return c;
+    public static HotelRoom findRoomByNumber(int roomNum, HotelRoom a, HotelRoom b, HotelRoom c) {
+        if (a.getRoomNum() == roomNum) {
+            return a;
+        }
+        if (b.getRoomNum() == roomNum) {
+        return b;
+        }
+        if (c.getRoomNum() == roomNum) {
+        return c;
+        }
         return null;
     }
 
-    public static void checkIn(String guestName,
-                               int roomNum,
-                               HotelRoom a,
-                               HotelRoom b,
-                               HotelRoom c) {
+    public static void checkIn(String guestName, int roomNum, HotelRoom a, HotelRoom b, HotelRoom c) {
 
         HotelRoom room = findRoomByNumber(roomNum, a, b, c);
 
@@ -92,10 +101,7 @@ public class Hotel {
         }
     }
 
-    public static void checkOut(int roomNum,
-                                HotelRoom a,
-                                HotelRoom b,
-                                HotelRoom c) {
+    public static void checkOut(int roomNum, HotelRoom a, HotelRoom b, HotelRoom c) {
 
         HotelRoom room = findRoomByNumber(roomNum, a, b, c);
 
@@ -107,16 +113,11 @@ public class Hotel {
         }
     }
 
-    public static void findAvailableByBeds(int beds,
-                                           HotelRoom a,
-                                           HotelRoom b,
-                                           HotelRoom c) {
-
+    public static void findAvailableByBeds(int beds, HotelRoom a, HotelRoom b, HotelRoom c) {
         if (beds < 2 || beds > 4) {
             System.out.println("No available room with the requested number of beds");
             return;
         }
-
         if (!a.isOccupied() && a.getNumBeds() == beds) {
             System.out.println(a);
         } else if (!b.isOccupied() && b.getNumBeds() == beds) {
