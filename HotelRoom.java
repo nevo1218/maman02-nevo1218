@@ -35,17 +35,22 @@ public class HotelRoom {
         return _guest;
     }
 
-    public void setRoomNum(int roomNum) {
-        if (roomNumOk(roomNum)) {
-            _roomNum = roomNum;
-        }
+   public void setRoomNum(int roomNum) {
+    if (roomNumOk(roomNum)) {
+        _roomNum = roomNum;
+    } else {
+        _roomNum = DEFAULT_ROOM_NUM;
     }
+}
 
     public void setNumBeds(int numBeds) {
-        if (numBedsOk(numBeds)) {
-            _numBeds = numBeds;
-        }
+    if (numBedsOk(numBeds)) {
+        _numBeds = numBeds;
+    } else {
+        _numBeds = DEFAULT_NUM_BEDS;
     }
+}
+
 
     private boolean roomNumOk(int roomNum) {
         return roomNum >= MIN_ROOM_NUM
@@ -81,9 +86,13 @@ public class HotelRoom {
     }
 
     public boolean equals(HotelRoom other) {
-        return _roomNum == other._roomNum
-                && _numBeds == other._numBeds;
+    if (other == null) {
+        return false;
     }
+
+    return _roomNum == other._roomNum
+            && _numBeds == other._numBeds;
+}
 
     public String toString() {
         if (!_occupied) {
