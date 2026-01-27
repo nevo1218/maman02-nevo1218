@@ -1,17 +1,11 @@
 ## Grade
 
-[![Grade](https://img.shields.io/badge/Grade-0%25-red)](https://github.com/nevo1218/maman02-nevo1218/actions/runs/21405043510)
-
-## Coding Standards
-
-❌ **Coding Standard Failed (-25 points)** - [View Checkstyle Report](https://github.com/nevo1218/maman02-nevo1218/actions/runs/21405043510)
+[![Grade](https://img.shields.io/badge/Grade-77%25-green)](https://github.com/nevo1218/maman02-nevo1218/actions/runs/21405114553) *(Original: 97%, Penalties: -20)*
 
 ## Tests
 
-[📊 View Test Reports](https://github.com/nevo1218/maman02-nevo1218/actions/runs/21405043510)
+[📊 View Test Reports](https://github.com/nevo1218/maman02-nevo1218/actions/runs/21405114553)
 
 ## AI Code Review
 
-❌ **AI Hasn't Reviewed Your Work**
-
-Your submission was not sent for AI review because the basic requirements were not met.
+⚠️ **AI Review Unavailable** (-20 points): OpenAI API key not configured. Please add OPENAI_API_KEY to repository secrets, or ask your teacher, Barak, to add a key for you.
