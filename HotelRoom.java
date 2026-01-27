@@ -13,8 +13,17 @@ public class HotelRoom {
     private String _guest;
 
     public HotelRoom(int roomNum, int numBeds) {
-        _roomNum = roomNumOk(roomNum) ? roomNum : DEFAULT_ROOM_NUM;
-        _numBeds = numBedsOk(numBeds) ? numBeds : DEFAULT_NUM_BEDS;
+        if (roomNum > MIN_ROOM_NUM && roomNum < MAX_ROOM_NUM) {
+             _roomNum = roomNum;
+        }   else {
+            _roomNum = DEFAULT_ROOM_NUM;
+        }
+        
+        if (numBeds > MIN_BEDS && numBeds < MAX_BEDS) {
+             _numBeds = numBeds;
+        }   else {
+            _numBeds = DEFAULT_NUM_BEDS;
+        }
         _occupied = false;
         _guest = "";
     }
