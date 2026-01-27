@@ -1,4 +1,3 @@
-
 public class HotelRoom {
 
     private static final int DEFAULT_ROOM_NUM = 999;
@@ -8,70 +7,73 @@ public class HotelRoom {
     private static final int MIN_BEDS = 2;
     private static final int MAX_BEDS = 4;
 
-    private int roomNum;
-    private int numBeds;
-    private boolean occupied;
-    private String guest;
+    private int _roomNum;
+    private int _numBeds;
+    private boolean _occupied;
+    private String _guest;
 
     public HotelRoom(int roomNum, int numBeds) {
-        this.roomNum = roomNumOk(roomNum) ? roomNum : DEFAULT_ROOM_NUM;
-        this.numBeds = numBedsOk(numBeds) ? numBeds : DEFAULT_NUM_BEDS;
-        this.occupied = false;
-        this.guest = "";
+        _roomNum = roomNumOk(roomNum) ? roomNum : DEFAULT_ROOM_NUM;
+        _numBeds = numBedsOk(numBeds) ? numBeds : DEFAULT_NUM_BEDS;
+        _occupied = false;
+        _guest = "";
     }
 
     public int getRoomNum() {
-        return roomNum;
+        return _roomNum;
     }
 
     public int getNumBeds() {
-        return numBeds;
+        return _numBeds;
     }
 
     public boolean isOccupied() {
-        return occupied;
+        return _occupied;
     }
 
     public String getGuest() {
-        return guest;
+        return _guest;
     }
 
     public void setRoomNum(int roomNum) {
         if (roomNumOk(roomNum)) {
-            this.roomNum = roomNum;
+            _roomNum = roomNum;
         }
     }
 
     public void setNumBeds(int numBeds) {
         if (numBedsOk(numBeds)) {
-            this.numBeds = numBeds;
+            _numBeds = numBeds;
         }
     }
 
     private boolean roomNumOk(int roomNum) {
-        return roomNum >= MIN_ROOM_NUM && roomNum <= MAX_ROOM_NUM;
+        return roomNum >= MIN_ROOM_NUM
+                && roomNum <= MAX_ROOM_NUM;
     }
 
     private boolean numBedsOk(int numBeds) {
-        return numBeds >= MIN_BEDS && numBeds <= MAX_BEDS;
+        return numBeds >= MIN_BEDS
+                && numBeds <= MAX_BEDS;
     }
 
     public boolean checkIn(String guest) {
-        if (occupied) {
+        if (_occupied) {
             return false;
         }
-        occupied = true;
-        this.guest = guest;
+
+        _occupied = true;
+        _guest = guest;
         return true;
     }
 
     public void checkOut() {
-        occupied = false;
-        guest = "";
+        _occupied = false;
+        _guest = "";
     }
 
     public boolean before(HotelRoom other) {
-        return roomNum < other.roomNum;
+        return _roomNum < other._roomNum;
     }
 
     public boolean after(HotelRoom other) {
@@ -79,14 +81,20 @@ public class HotelRoom {
     }
 
     public boolean equals(HotelRoom other) {
-        return roomNum == other.roomNum && numBeds == other.numBeds;
+        return _roomNum == other._roomNum
+                && _numBeds == other._numBeds;
     }
 
     public String toString() {
-        if (!occupied) {
-            return "Room " + roomNum + ", " + numBeds + " Beds: Available";
+        if (!_occupied) {
+            return "Room " + _roomNum
+                    + ", " + _numBeds
+                    + " Beds: Available";
         }
-        return "Room " + roomNum + ", " + numBeds +
-               " Beds: Occupied by " + guest;
+
+        return "Room " + _roomNum
+                + ", " + _numBeds
+                + " Beds: Occupied by "
+                + _guest;
     }
 }
