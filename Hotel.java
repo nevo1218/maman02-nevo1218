@@ -26,6 +26,7 @@ public class Hotel {
 
         switch (choice) {
             case 1:
+                System.out.println();
                 displaySorted(a, b, c);
                 break;
 
