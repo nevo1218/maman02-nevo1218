@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Hotel {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+        final Scanner scan = new Scanner(System.in);
 
         HotelRoom a = new HotelRoom(307, 4);
         HotelRoom b = new HotelRoom(205, 3);
@@ -89,13 +89,20 @@ public class Hotel {
     }
 
     public static HotelRoom findRoomByNumber(int roomNum, HotelRoom a, HotelRoom b, HotelRoom c) {
-        if (a.getRoomNum() == roomNum) return a;
-        if (b.getRoomNum() == roomNum) return b;
-        if (c.getRoomNum() == roomNum) return c;
+        if (a.getRoomNum() == roomNum) {
+            return a;
+        }
+        if (b.getRoomNum() == roomNum) {
+            return b;
+        }
+        if (c.getRoomNum() == roomNum) {
+            return c;
+        }
         return null;
     }
 
-    public static void checkIn(String guestName, int roomNum, HotelRoom a, HotelRoom b, HotelRoom c) {
+    public static void checkIn(String guestName, int roomNum,
+                               HotelRoom a, HotelRoom b, HotelRoom c) {
         HotelRoom room = findRoomByNumber(roomNum, a, b, c);
         if (room != null && room.checkIn(guestName)) {
             System.out.println(room);
@@ -104,7 +111,8 @@ public class Hotel {
         }
     }
 
-    public static void checkOut(int roomNum, HotelRoom a, HotelRoom b, HotelRoom c) {
+    public static void checkOut(int roomNum,
+                                HotelRoom a, HotelRoom b, HotelRoom c) {
         HotelRoom room = findRoomByNumber(roomNum, a, b, c);
         if (room != null && room.isOccupied()) {
             room.checkOut();
@@ -114,7 +122,8 @@ public class Hotel {
         }
     }
 
-    public static void findAvailableByBeds(int beds, HotelRoom a, HotelRoom b, HotelRoom c) {
+    public static void findAvailableByBeds(int beds,
+                                           HotelRoom a, HotelRoom b, HotelRoom c) {
         if (beds < 2 || beds > 4) {
             System.out.println("No available room with the requested number of beds");
             return;
