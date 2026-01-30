@@ -1,10 +1,10 @@
 ## Grade
 
-[![Grade](https://img.shields.io/badge/Grade-79%25-green)](https://github.com/nevo1218/maman02-nevo1218/actions/runs/21511919095) *(Original: 99%, Penalties: -20)*
+[![Grade](https://img.shields.io/badge/Grade-79%25-green)](https://github.com/nevo1218/maman02-nevo1218/actions/runs/21511989291) *(Original: 99%, Penalties: -20)*
 
 ## Tests
 
-[📊 View Test Reports](https://github.com/nevo1218/maman02-nevo1218/actions/runs/21511919095)
+[📊 View Test Reports](https://github.com/nevo1218/maman02-nevo1218/actions/runs/21511989291)
 
 ## AI Code Review
 
