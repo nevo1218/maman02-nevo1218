@@ -1,10 +1,14 @@
 ## Grade
 
-[![Grade](https://img.shields.io/badge/Grade-79%25-green)](https://github.com/nevo1218/maman02-nevo1218/actions/runs/21511139145) *(Original: 99%, Penalties: -20)*
+[![Grade](https://img.shields.io/badge/Grade-0%25-red)](https://github.com/nevo1218/maman02-nevo1218/actions/runs/21511615156)
+
+## Coding Standards
+
+❌ **Coding Standard Failed (-25 points)** - [View Checkstyle Report](https://github.com/nevo1218/maman02-nevo1218/actions/runs/21511615156)
 
 ## Tests
 
-[📊 View Test Reports](https://github.com/nevo1218/maman02-nevo1218/actions/runs/21511139145)
+[📊 View Test Reports](https://github.com/nevo1218/maman02-nevo1218/actions/runs/21511615156)
 
 ## AI Code Review
 
