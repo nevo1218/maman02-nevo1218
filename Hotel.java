@@ -27,10 +27,9 @@ public class Hotel {
 
         switch (choice) {
             case 1:
-                System.out.println();
+                System.out.println("Enter your choice:");
                 displaySorted(a, b, c);
                 break;
-
             case 2:
                 System.out.print("Enter room number:");
                 int roomNum = scan.nextInt();
