@@ -19,7 +19,8 @@ public class Hotel {
         System.out.println("2 - Check-in to a room");
         System.out.println("3 - Check-out from a room");
         System.out.println("4 - Find available room by requested beds");
-        System.out.print("Enter your choice:");
+        System.out.println("Enter your choice:");
+
 
         int choice = scan.nextInt();
         scan.nextLine();
