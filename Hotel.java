@@ -21,15 +21,14 @@ public class Hotel {
         System.out.println("4 - Find available room by requested beds");
         System.out.println("Enter your choice:");
 
-
         int choice = scan.nextInt();
         scan.nextLine();
 
         switch (choice) {
             case 1:
-                System.out.println("Enter your choice:");
                 displaySorted(a, b, c);
                 break;
+
             case 2:
                 System.out.print("Enter room number:");
                 int roomNum = scan.nextInt();
